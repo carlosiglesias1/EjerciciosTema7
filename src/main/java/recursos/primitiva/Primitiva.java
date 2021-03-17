@@ -32,6 +32,16 @@ public class Primitiva {
         return false;
     }
 
+    private boolean repetidos (int [] combinaciones){
+        for (int i = 0; i < combinaciones.length; i++) {
+            for (int j = 0; j < combinaciones.length; j++) {
+                if(combinaciones[j] == combinaciones[i] && i != j)
+                    return true;
+            }
+        }
+        return false;
+    }
+
     public Primitiva (){
         for (int i = 0; i < digitos.length; i++) {
             do{
@@ -42,10 +52,17 @@ public class Primitiva {
 
     public int aciertos (int [] combinacion){
         int acierta = 0;
-        for (int i = 0; i < digitos.length; i++) {
-            if(combinacion[i] == combinacion[i])
-                acierta++;
+        if(repetidos(combinacion))
+            return acierta;
+        else{
+            for (int i = 0; i < digitos.length; i++) {
+                for (int j = 0; j < combinacion.length; j++) {
+                    if (digitos[i] == combinacion[j])
+                        acierta++;
+                }
+            }
+            return acierta;
         }
-        return acierta;
     }
+
 }

@@ -1,5 +1,9 @@
 package ejercicios;
 
+import java.util.Scanner;
+
+import recursos.primitiva.*;
+
 /**
  * Realizar una clase Primitiva que tenga definido un Array privado de 6
  * elementos con el resultado de un sorteo de la primitiva (serán 6 enteros con
@@ -18,5 +22,19 @@ package ejercicios;
  */
 
 public class Ejercicio5 {
-    
+    static Scanner teclado = new Scanner(System.in);
+
+    static void rellenarBoleto (int [] boleto){
+        for (int i = 0; i < boleto.length; i++) {
+            boleto[i] = teclado.nextInt();
+        }
+    }
+
+    public static void main(String[] args) {
+        int [] boleto = new int [6];
+        JuegoPrimitiva juego = new JuegoPrimitiva();
+        Primitiva primitiva = new Primitiva();
+        rellenarBoleto(boleto);
+        JuegoPrimitiva.getAciretos(boleto);
+    }
 }
