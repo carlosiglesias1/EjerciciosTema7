@@ -1,4 +1,6 @@
-package recursos;
+package recursos.primitiva;
+
+import java.util.Random;
 
 /**
  * Realizar una clase Primitiva que tenga definido un Array privado de 6
@@ -17,5 +19,33 @@ package recursos;
  */
 
 public class Primitiva {
-    
+    private int [] digitos = {1,2,3,4,5,6};
+    private Random numero = new Random();
+
+    private boolean repetidos (){
+        for (int i = 0; i < digitos.length; i++) {
+            for (int j = 0; j < digitos.length; j++) {
+                if(this.digitos[j] == this.digitos[i] && i != j)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    public Primitiva (){
+        for (int i = 0; i < digitos.length; i++) {
+            do{
+                this.digitos[i] = numero.nextInt(50)+1;
+            }while(!repetidos());
+        }
+    }
+
+    public int aciertos (int [] combinacion){
+        int acierta = 0;
+        for (int i = 0; i < digitos.length; i++) {
+            if(combinacion[i] == combinacion[i])
+                acierta++;
+        }
+        return acierta;
+    }
 }
