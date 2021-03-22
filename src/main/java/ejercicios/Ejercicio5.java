@@ -1,5 +1,6 @@
 package ejercicios;
 
+import java.util.Random;
 import java.util.Scanner;
 
 import recursos.primitiva.*;
@@ -22,19 +23,21 @@ import recursos.primitiva.*;
  */
 
 public class Ejercicio5 {
-    static Scanner teclado = new Scanner(System.in);
 
-    static void rellenarBoleto (int [] boleto){
-        for (int i = 0; i < boleto.length; i++) {
-            boleto[i] = teclado.nextInt();
+    static BoletoPrimitiva [] generarBoletos (BoletoPrimitiva boleto, int [] numeros, int entrada){
+        BoletoPrimitiva [] boletosPrimitiva = new BoletoPrimitiva [1000];
+        for (int i = 0; i < 1000; i++) {
+            for (int j = 0; j < boleto.getLength(); j++) {
+               boletosPrimitiva[i]=new BoletoPrimitiva (numeros, entrada); 
+            }
         }
+        return boletosPrimitiva;
     }
 
     public static void main(String[] args) {
-        int [] boleto = new int [6];
-        JuegoPrimitiva juego = new JuegoPrimitiva();
-        Primitiva primitiva = new Primitiva();
-        rellenarBoleto(boleto);
-        juego.getAciertos(boleto);
+        Scanner teclado = new Scanner(System.in);
+        Random numero = new Random();
+        
+        teclado.close();
     }
 }
