@@ -35,6 +35,6 @@ public class Ejercicio5 {
         JuegoPrimitiva juego = new JuegoPrimitiva();
         Primitiva primitiva = new Primitiva();
         rellenarBoleto(boleto);
-        JuegoPrimitiva.getAciretos(boleto);
+        juego.getAciertos(boleto);
     }
 }

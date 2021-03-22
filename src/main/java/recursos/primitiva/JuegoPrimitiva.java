@@ -5,7 +5,7 @@ public class JuegoPrimitiva{
         //Empty juego
     }
 
-    static int getAciretos (int [] boleto){
+    public int getAciertos (int [] boleto){
         Primitiva primitiva = new Primitiva();
         return primitiva.aciertos(boleto);
     }
