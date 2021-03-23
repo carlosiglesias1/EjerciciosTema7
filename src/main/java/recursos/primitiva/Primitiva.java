@@ -65,4 +65,7 @@ public class Primitiva {
         }
     }
 
+    public int [] getPrimitiva (){
+        return this.digitos;
+    }
 }
