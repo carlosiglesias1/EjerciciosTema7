@@ -51,6 +51,18 @@ public class Ejercicio5 {
         }
         return count;
     }
+
+    static int contarIntentos (){
+        int contadorIntentos = 0;
+        BoletoPrimitiva boleto;
+        Primitiva primitiva;
+        do {
+            boleto = new BoletoPrimitiva(6);
+            primitiva = new Primitiva();
+            contadorIntentos++;
+        } while (boleto.getAciertos(primitiva)!=6);
+        return contadorIntentos;
+    }
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         BoletoPrimitiva boleto = new BoletoPrimitiva(6);
@@ -63,6 +75,7 @@ public class Ejercicio5 {
         System.out.println("\tHan tenido 4 aciertos: " + contarAciertos(milBoletos, primitiva, 4));
         System.out.println("\tHan tenido 5 aciertos: " + contarAciertos(milBoletos, primitiva, 5));
         System.out.println("\tHan tenido 6 aciertos: " + contarAciertos(milBoletos, primitiva, 6));
+        System.out.println("\nHan hecho falta "+contarIntentos()+" intentos para lograr los 6 aciertos");
         teclado.close();
     }
 }
