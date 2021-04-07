@@ -28,19 +28,23 @@ public class Ejercicio6 {
         System.out.println("e: salir");
     }
 
-    static void showStatus (Parking parking){
+    static void showStatus(Parking parking) {
         for (int i = 0; i < parking.getStatus().length; i++) {
             System.out.print("[" + parking.getStatus()[i].toString() + "]");
         }
     }
 
     static void aparcar(String matricula, Parking parking) {
-        System.out.println("Este coche está alojado en la plaza " + parking.park(matricula));
+        if (parking.park(matricula) == 0)
+            System.out.println("El parking está lleno");
+        else
+            System.out.println("Este coche está alojado en la plaza " + parking.getOccupiedPlaces());
         showStatus(parking);
     }
 
     static void sacarCoche(Parking parking) {
-        System.out.println("Se ha eliminado la matricula "+parking.unPark()+" ahora queda(n) "+parking.getOccupiedPlaces()+" coche(s)");
+        System.out.println("Se ha eliminado la matricula " + parking.unPark() + " ahora queda(n) "
+                + parking.getOccupiedPlaces() + " coche(s)");
         showStatus(parking);
     }
 
@@ -52,11 +56,12 @@ public class Ejercicio6 {
             promptMenu();
             opcion = teclado.nextLine().charAt(0);
             switch (opcion) {
-            case 'p': 
+            case 'p':
                 System.out.print("Introduce la matrícula: ");
                 aparcar(teclado.nextLine(), parking);
                 break;
-            case 'u': sacarCoche(parking);
+            case 'u':
+                sacarCoche(parking);
                 break;
             case 's':
                 showStatus(parking);
