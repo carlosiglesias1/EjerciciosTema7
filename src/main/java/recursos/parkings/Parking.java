@@ -1,4 +1,4 @@
-package recursos;
+package recursos.parkings;
 
 import java.util.ArrayList;
 

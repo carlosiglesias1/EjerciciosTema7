@@ -2,7 +2,7 @@ package ejercicios;
 
 import java.util.Scanner;
 
-import recursos.Parking;
+import recursos.parkings.Parking;
 
 /**
  * 7.6. Realizar una clase llamada Parking que gestione los coches aparcados en
