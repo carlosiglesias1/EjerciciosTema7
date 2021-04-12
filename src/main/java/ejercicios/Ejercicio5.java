@@ -24,23 +24,59 @@ import recursos.primitiva.*;
  */
 
 public class Ejercicio5 {
+    static Random numero = new Random();
 
-    
-    /*@param BoletoPrimitiva objeto boleto de la primitiva*/
-    static BoletoPrimitiva [] generarBoletos (BoletoPrimitiva boleto, int [] numeros, int entrada){
-        BoletoPrimitiva [] boletosPrimitiva = new BoletoPrimitiva [1000];
-        for (int i = 0; i < 1000; i++) {
-            for (int j = 0; j < boleto.getLength(); j++) {
-               boletosPrimitiva[i]=new BoletoPrimitiva (numeros, entrada); 
+    static String imprimirBoleto (int [] boleto){
+        String cadena = "";
+        for (int i = 0; i < boleto.length; i++) {
+            cadena +=(Integer.toString(boleto[i]));
+        }
+        return cadena;
+    }
+
+    static BoletoPrimitiva[] generarBoletos() {
+        BoletoPrimitiva[] boletosPrimitiva = new BoletoPrimitiva[1000];
+        for (int i = 0; i < boletosPrimitiva.length; i++) {
+            for (int j = 0; j < 6; j++) {
+                boletosPrimitiva[i] = new BoletoPrimitiva(6);
             }
         }
         return boletosPrimitiva;
     }
 
+    static int contarAciertos(BoletoPrimitiva[] boletos, Primitiva primitiva, int indice) {
+        int count = 0;
+        for (int i = 0; i < boletos.length; i++) {
+            if (boletos[i].getAciertos(primitiva) == indice)
+                count++;
+        }
+        return count;
+    }
+
+    static int contarIntentos (){
+        int contadorIntentos = 0;
+        BoletoPrimitiva boleto;
+        Primitiva primitiva;
+        do {
+            boleto = new BoletoPrimitiva(6);
+            primitiva = new Primitiva();
+            contadorIntentos++;
+        } while (boleto.getAciertos(primitiva)!=6);
+        return contadorIntentos;
+    }
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        Random numero = new Random();
-
+        BoletoPrimitiva boleto = new BoletoPrimitiva(6);
+        BoletoPrimitiva[] milBoletos = generarBoletos();
+        Primitiva primitiva = new Primitiva();
+        System.out.println("El boleto " + imprimirBoleto(boleto.getBoleto()) + " ha conseguido "
+                + boleto.getAciertos(primitiva) + " aciertos de la primitiva " + imprimirBoleto(primitiva.getPrimitiva()));
+        System.out.println("\nCon 1000 boletos los resultados son: ");
+        System.out.println("\tHan tenido 3 aciertos: " + contarAciertos(milBoletos, primitiva, 3));
+        System.out.println("\tHan tenido 4 aciertos: " + contarAciertos(milBoletos, primitiva, 4));
+        System.out.println("\tHan tenido 5 aciertos: " + contarAciertos(milBoletos, primitiva, 5));
+        System.out.println("\tHan tenido 6 aciertos: " + contarAciertos(milBoletos, primitiva, 6));
+        System.out.println("\nHan hecho falta "+contarIntentos()+" intentos para lograr los 6 aciertos");
         teclado.close();
     }
 }
