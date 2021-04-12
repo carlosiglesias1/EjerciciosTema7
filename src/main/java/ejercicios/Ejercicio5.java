@@ -19,11 +19,14 @@ import recursos.primitiva.*;
  * Primitiva para generar boletos al azar). Programa con un bucle que genere
  * boletos hasta que acierte los 6 números ¿Cuántos boletos has tenido que
  * crear?
- * 
+ * @author Carlos Iglesias Gómez
+ * @version 1.0
  */
 
 public class Ejercicio5 {
 
+    
+    /*@param BoletoPrimitiva objeto boleto de la primitiva*/
     static BoletoPrimitiva [] generarBoletos (BoletoPrimitiva boleto, int [] numeros, int entrada){
         BoletoPrimitiva [] boletosPrimitiva = new BoletoPrimitiva [1000];
         for (int i = 0; i < 1000; i++) {
@@ -37,7 +40,7 @@ public class Ejercicio5 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         Random numero = new Random();
-        
+
         teclado.close();
     }
 }
