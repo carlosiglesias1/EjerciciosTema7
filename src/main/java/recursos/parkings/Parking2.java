@@ -41,11 +41,13 @@ public class Parking2 {
         if (occupiedPLace == 0)
             return unparking;
         else {
-            LocalTime timeNow = LocalTime.now();
-            LocalTime initialTime = LocalTime.parse(matriculas[occupiedPLace][1]);
             occupiedPLace--;
+            LocalTime initialTime = LocalTime.parse(matriculas[occupiedPLace][1]);
+            LocalTime finaTime = LocalTime.now();
+            int initialSeconds = initialTime.getHour()*3600+initialTime.getMinute()*60+initialTime.getSecond();
+            int finalSeconds = finaTime.getHour()*3600+finaTime.getMinute()*60+finaTime.getSecond();
             unparking[0] = matriculas[occupiedPLace][0];
-            unparking[1] = Float.toString((timeNow.getSecond() - initialTime.getSecond()) * 0.02f);
+            unparking[1] = Float.toString((finalSeconds-initialSeconds) * 0.02f);
             matriculas[occupiedPLace] = null;
             return unparking;
         }

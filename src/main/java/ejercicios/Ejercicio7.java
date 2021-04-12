@@ -27,7 +27,7 @@ import recursos.parkings.Parking2;
  */
 public class Ejercicio7 {
     static void promptMenu() {
-        System.out.println("\nHola, qué quieres hacer?");
+        System.out.println("\n\nHola, qué quieres hacer?");
         System.out.println("p: Aparcar vehiculo");
         System.out.println("u: Sacar vehiculo");
         System.out.println("s: Estado del parking");
@@ -37,7 +37,8 @@ public class Ejercicio7 {
     static void showStatus(Parking2 parking) {
         DateTimeFormatter dFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         for (int i = 0; i < parking.getStatus().size(); i++) {
-            System.out.print("[[" + parking.getStatus().get(i)[0] + "],[" + LocalTime.parse(parking.getStatus().get(i)[1]).format(dFormatter).toString() + "]] ");
+            System.out.print("[[" + parking.getStatus().get(i)[0] + "],["
+                    + LocalTime.parse(parking.getStatus().get(i)[1]).format(dFormatter).toString() + "]] ");
         }
     }
 
@@ -50,8 +51,9 @@ public class Ejercicio7 {
     }
 
     static void sacarCoche(Parking2 parking) {
-        System.out.println("Se ha eliminado la matricula " + parking.unPark() + " ahora queda(n) "
-                + parking.getOccupiedPlaces() + " coche(s)");
+        String[] importeYmatricula = parking.unPark();
+        System.out.println("\nSe ha eliminado la matricula " + importeYmatricula[0] + "\nEL importe es: "
+                + importeYmatricula[1] + "\nAhora queda(n) " + parking.getOccupiedPlaces() + " coche(s)");
         showStatus(parking);
     }
 
