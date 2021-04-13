@@ -5,8 +5,8 @@ public class Articulo {
     private String descripcion;
     private float precioUnitario;
 
-    public Articulo (String codigo, String desc, float price){
-        this.codigo= codigo;
+    public Articulo(String codigo, String desc, float price) {
+        this.codigo = codigo;
         this.descripcion = desc;
         this.precioUnitario = price;
     }

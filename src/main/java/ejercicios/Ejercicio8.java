@@ -25,8 +25,11 @@ public class Ejercicio8 {
 
     static void showStatus(CarritoCompra compra) {
         for (int i = 0; i < compra.getCarrito().size(); i++) {
-            System.out.println(compra.getCarrito().get(i).getDescripcion());
+            System.out.print(
+                    "[" + compra.getCarrito().get(i).getCodigo() + ", " + compra.getCarrito().get(i).getDescripcion()
+                            + ", " + compra.getCarrito().get(i).getPrecioTotal() + "] ");
         }
+        System.out.println();
     }
 
     static void comprar(ArticuloComprado aComprado, CarritoCompra compra) {
@@ -37,12 +40,15 @@ public class Ejercicio8 {
             System.out.println("Ha ocurrido algo inesperado");
     }
 
-    static void eliminar (String codigo, CarritoCompra compra){
-        
+    static void eliminar(String codigo, CarritoCompra compra) {
+        if (!compra.rmProduct(codigo))
+            System.out.println("No se ha podido eliminar el producto, inténtalo de nuevo");
+        else
+            System.out.println("Producto eliminado correctamente");
     }
 
     static void promptMenu() {
-        System.out.println("Hola, bienvenido a tu lista de la compra");
+        System.out.println("\nHola, bienvenido a tu lista de la compra");
         System.out.println("Pulsa 'c' para comprar");
         System.out.println("Pulsa 'b' para borrar");
         System.out.println("Pulsa 'v' para ver");
@@ -52,7 +58,7 @@ public class Ejercicio8 {
     public static void main(String[] args) {
         CarritoCompra carritoCompra = new CarritoCompra();
         Scanner teclado = new Scanner(System.in);
-        String code ="";
+        String code = "";
         char opcion;
         do {
             promptMenu();
@@ -78,7 +84,8 @@ public class Ejercicio8 {
                 showStatus(carritoCompra);
                 break;
             case 'e':
-                System.out.println("Adiós");
+                System.out.printf("El precio total de esta compra es de %.2f euros\n", carritoCompra.getTotalCompra());
+                System.out.println("Adiós, vuelva pronto");
                 break;
             default:
                 break;
