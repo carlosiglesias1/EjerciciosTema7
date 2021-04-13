@@ -1,6 +1,6 @@
 package ejercicios;
 
-import recursos.TemperaturasMeses;
+import recursos.temperaturas.TemperaturasMeses;
 
 /**
  * 7.1. Realiza un programa que tenga definido un Array como variable global
