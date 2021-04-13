@@ -55,8 +55,10 @@ public class TemperaturasVersionNueve {
         int mes = -1;
         int tfria = 100;
         for (int i = 0; i < temperaturaMeses.length; i++) {
-            if(temperaturaMeses[i]< tfria)
+            if(temperaturaMeses[i]< tfria){
+                tfria = temperaturaMeses[i];
                 mes = i;
+            }
         }
         return mes;
     }
@@ -65,8 +67,10 @@ public class TemperaturasVersionNueve {
         int mes = -1;
         int tcaliente = -20;
         for (int i = 0; i < temperaturaMeses.length; i++) {
-            if(temperaturaMeses[i]> tcaliente)
+            if(temperaturaMeses[i]> tcaliente){
+                tcaliente = temperaturaMeses[i];
                 mes = i;
+            }
         }
         return mes;
     }

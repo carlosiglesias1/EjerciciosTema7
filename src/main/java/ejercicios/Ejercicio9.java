@@ -29,9 +29,19 @@ import recursos.temperaturas.TemperaturasVersionNueve;
 public class Ejercicio9 {
     static void showTemps(TemperaturasVersionNueve tNueve) {
         for (int i = 0; i < tNueve.getTemperaturas().length; i++) {
-            System.out.print("[" + tNueve.getTemperaturas()[i] + "] ");
+            System.out.print("[" + Month.of(i+1)+", "+ tNueve.getTemperaturas()[i] + "] ");
         }
         System.out.println();
+    }
+
+    static void prompMenu (){
+        System.out.println("\nHola, bienvenido a tu lista de la compra");
+        System.out.println("Pulsa 'c' para crear una nueva lista de temperaturas");
+        System.out.println("Pulsa 's' para mostrar la lista de temperaturas");
+        System.out.println("Pulsa 'a' para ver la temperatura media");
+        System.out.println("Pulsa 'p' para ver la temperatura más alta del año");
+        System.out.println("Pulsa 'f' para ver el mes más frío del año");
+        System.out.println("Pulsa 'e' para salir");
     }
 
     public static void main(String[] args) {
@@ -46,16 +56,15 @@ public class Ejercicio9 {
                 tNueve.newTemperaturaMeses();
                 break;
             case 's':
-                showTemps(tNueve);
                 break;
             case 'a':
                 System.out.printf("Temperatura media: %.2f\n", tNueve.temperaturaMedia());
                 break;
-            case '+':
-                System.out.printf("Temperatura más alta: %.2f\n", tNueve.getTemperaturas()[tNueve.getMesMasCaliente()]);
+            case 'p':
+                System.out.println("Temperatura más alta: "+ tNueve.getTemperaturas()[tNueve.getMesMasCaliente()]);
                 break;
             case 'f':
-                System.out.println("Mes más frío: " + Month.of(tNueve.getMesMasFrio()));
+                System.out.println("Mes más frío: " + Month.of(tNueve.getMesMasFrio()+1)+", "+tNueve.getTemperaturas()[tNueve.getMesMasFrio()]);
                 break;
             default:
                 break;
