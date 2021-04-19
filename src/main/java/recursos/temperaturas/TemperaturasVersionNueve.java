@@ -92,4 +92,39 @@ public class TemperaturasVersionNueve {
         }
         return false;
     }
+
+    public boolean moveTempsRight (){
+        int [] auxArr = new int [this.temperaturaMeses.length];
+        auxArr[0] = this.temperaturaMeses[this.temperaturaMeses.length-1];
+        for (int i = auxArr.length-1; i > 0; i--) {
+            auxArr[i] = this.temperaturaMeses[i-1];
+        }
+        this.temperaturaMeses = auxArr;
+        if(this.temperaturaMeses == auxArr)
+            return true;
+        else
+            return false;
+        
+    }
+
+    public boolean moveTempsLeft (){
+        int [] auxArr = new int [this.temperaturaMeses.length];
+        auxArr[auxArr.length-1] = this.temperaturaMeses[0];
+        for (int i = 0; i < auxArr.length-1; i++) {
+            auxArr[i] = this.temperaturaMeses[i+1];
+        }
+        this.temperaturaMeses = auxArr;
+        if(this.temperaturaMeses == auxArr)
+            return true;
+        else
+            return false;
+    }
+
+    public boolean plusThirty (){
+        for (int i = 0; i < this.temperaturaMeses.length; i++) {
+            if(this.temperaturaMeses[i] > 30)
+                return true;
+        }
+        return false;
+    }
 }

@@ -27,20 +27,23 @@ import recursos.temperaturas.TemperaturasVersionNueve;
  */
 
 public class Ejercicio9 {
-    static void showTemps(TemperaturasVersionNueve tNueve) {
-        for (int i = 0; i < tNueve.getTemperaturas().length; i++) {
-            System.out.print("[" + Month.of(i+1)+", "+ tNueve.getTemperaturas()[i] + "] ");
+    static void showTemps(int[] temps) {
+        for (int i = 0; i < temps.length; i++) {
+            System.out.print("[" + Month.of(i + 1) + ", " + temps[i] + "] ");
         }
         System.out.println();
     }
 
-    static void prompMenu (){
+    static void prompMenu() {
         System.out.println("\nHola, bienvenido a tu lista de la compra");
         System.out.println("Pulsa 'c' para crear una nueva lista de temperaturas");
         System.out.println("Pulsa 's' para mostrar la lista de temperaturas");
         System.out.println("Pulsa 'a' para ver la temperatura media");
         System.out.println("Pulsa 'p' para ver la temperatura más alta del año");
         System.out.println("Pulsa 'f' para ver el mes más frío del año");
+        System.out.println("Pulsa 'r' para mover las temperaturas a la derecha");
+        System.out.println("Pulsa 'l' para mover las temperaturas a la izquierda");
+        System.out.println("Pulsa 't' para saber si hay algún mes que supere los 30 grados");
         System.out.println("Pulsa 'e' para salir");
     }
 
@@ -49,7 +52,8 @@ public class Ejercicio9 {
         Scanner teclado = new Scanner(System.in);
         char opcion;
         do {
-            showTemps(tNueve);
+            prompMenu();
+            showTemps(tNueve.getTemperaturas());
             opcion = teclado.nextLine().charAt(0);
             switch (opcion) {
             case 'c':
@@ -61,15 +65,36 @@ public class Ejercicio9 {
                 System.out.printf("Temperatura media: %.2f\n", tNueve.temperaturaMedia());
                 break;
             case 'p':
-                System.out.println("Temperatura más alta: "+ tNueve.getTemperaturas()[tNueve.getMesMasCaliente()]);
+                System.out.println("Temperatura más alta: " + tNueve.getTemperaturas()[tNueve.getMesMasCaliente()]);
                 break;
             case 'f':
-                System.out.println("Mes más frío: " + Month.of(tNueve.getMesMasFrio()+1)+", "+tNueve.getTemperaturas()[tNueve.getMesMasFrio()]);
+                System.out.println("Mes más frío: " + Month.of(tNueve.getMesMasFrio() + 1) + ", "
+                        + tNueve.getTemperaturas()[tNueve.getMesMasFrio()]);
+                break;
+            case 'r':
+                if (tNueve.moveTempsRight())
+                    System.out.println("\nSe han movido las temperaturas");
+                else
+                    System.out.println("\nNo se ha completado la operación");
+                System.out.println();
+                break;
+            case 'l':
+                if (tNueve.moveTempsLeft())
+                    System.out.println("\nSe han movido las temperaturas");
+                else
+                    System.out.println("\nNo se ha completado la operación");
+                System.out.println();
+                break;
+            case 't':
+                if (tNueve.plusThirty())
+                    System.out.println("Lo hay");
+                else
+                    System.out.println("No lo hay");
                 break;
             default:
                 break;
             }
-
         } while (opcion != 'e');
+        teclado.close();
     }
 }
