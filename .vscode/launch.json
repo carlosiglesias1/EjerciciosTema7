@@ -6,6 +6,21 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Ejercicio15",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio15",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio13",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio13",
+            "projectName": "EjerciciosTema7",
+            "args": "Marta"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
