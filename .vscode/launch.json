@@ -1,0 +1,99 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio1",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio1",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio10",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio10",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio11",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio11",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio12",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio12",
+            "projectName": "EjerciciosTema7",
+            "args": "4 2"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio2",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio2",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio3",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio3",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio4",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio4",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio5",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio5",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio6",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio6",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio7",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio7",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio8",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio8",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio9",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio9",
+            "projectName": "EjerciciosTema7"
+        }
+    ]
+}
