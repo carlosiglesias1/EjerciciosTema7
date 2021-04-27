@@ -1,4 +1,6 @@
-package recursos;
+package recursos.facturas;
+
+import java.time.LocalDate;
 
 /**
  * 7.20. Diseñar una clase Factura que consta de:  Número identificador: lo
@@ -21,5 +23,8 @@ package recursos;
  */
 
 public class Factura {
-
+    private String numberDoc;
+    private LocalDate date;
+    private String numberCli;
+    private final float iva = 0.21f;
 }
