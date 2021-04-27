@@ -1,7 +1,5 @@
 package ejercicios;
 
-import java.util.ArrayList;
-
 import recursos.primitiva.BoletoPrimitiva;
 import recursos.primitiva.Primitiva2;
 
