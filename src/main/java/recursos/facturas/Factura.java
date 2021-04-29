@@ -61,6 +61,10 @@ public class Factura {
         return numberDoc;
     }
 
+    public float getIVA() {
+        return IVA;
+    }
+
     // métodos de interacción de la clase
     public boolean addLine(String description, float precio, int cantidad) {
         try {
