@@ -9,5 +9,7 @@ package recursos.facturas;
 
 public class LineaFactura {
     private String description;
-    
+    private float precioUnitario;
+    private int unidades;
+    private float precioTotal;   
 }
