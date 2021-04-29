@@ -15,9 +15,18 @@ import recursos.sieteymedia.*;
  */
 
 public class Ejercicio21 {
+    static final float TOP = 7.5f;
     static boolean todosSePlantan(Jugador[] jugadors) {
         for (int i = 0; i < jugadors.length; i++) {
             if (!jugadors[i].getPlantado())
+                return false;
+        }
+        return true;
+    }
+
+    static boolean todosSePasan (Jugador [] jugadores){
+        for (int i = 0; i < jugadores.length; i++) {
+            if (jugadores[i].getPuntos()<TOP)
                 return false;
         }
         return true;
@@ -56,11 +65,20 @@ public class Ejercicio21 {
         for (int i = 0; i < jugador.getCartas().size(); i++) {
             System.out.print(" " + jugador.getCartas().get(i).getValor());
         }
-        System.out.println();
+        System.out.println(": "+jugador.getPuntos());
     }
 
-    static Jugador getGanador (Jugador [] jugadores){
-        
+    static int getGanador(Jugador[] jugadores) {
+        if (todosSePasan(jugadores))
+            return -1;
+        else {
+            int jugador = 0;
+            for (int i = 0; i < jugadores.length; i++) {
+                if((jugadores[jugador].getPuntos() < jugadores[i].getPuntos()) && (jugadores[i].getPuntos()<TOP) || jugadores[jugador].getPuntos()>TOP)
+                    jugador = i;
+            }
+            return jugador;
+        }
     }
 
     public static void main(String[] args) {
@@ -86,7 +104,10 @@ public class Ejercicio21 {
                 }
             }
         } while (!todosSePlantan(jugadores) && quedanCartas(baraja));
-
+        if(getGanador(jugadores)==-1)
+            System.out.println("No ha ganado nadie");
+        else
+            System.out.println("Ha ganado el Jugador"+ (getGanador(jugadores)+1));
         teclado.close();
     }
 }

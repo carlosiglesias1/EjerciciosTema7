@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Jugador {
     private ArrayList <Carta> cartas;
+    private float puntos;
     private boolean plantado;
 
     public Jugador (){
@@ -20,18 +21,18 @@ public class Jugador {
         return this.plantado;
     }
 
+    public float getPuntos() {
+        return puntos;
+    }
+
     //metodos
     public void setPlantado() {
         this.plantado = true;
     }
 
     public boolean cogerCarta (Carta carta) {
-        float suma = 0;
-        for (int i = 0; i < this.cartas.size(); i++) {
-            suma += this.cartas.get(i).getValor();
-        }
-        suma += carta.getValor();
-        if (suma > 7.5f)
+        this.puntos += carta.valor;
+        if (this.puntos > 7.5f)
             this.plantado = true;
         return (this.cartas.add(carta));
     }
