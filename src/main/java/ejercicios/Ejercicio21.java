@@ -59,6 +59,10 @@ public class Ejercicio21 {
         System.out.println();
     }
 
+    static Jugador getGanador (Jugador [] jugadores){
+        
+    }
+
     public static void main(String[] args) {
         Carta[] baraja = new Carta[40];
         Jugador[] jugadores = new Jugador[3];
