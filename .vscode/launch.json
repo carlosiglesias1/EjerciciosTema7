@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Ejercicio24",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio24",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio23",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio23",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
             "name": "Launch Ejercicio22",
             "request": "launch",
             "mainClass": "ejercicios.Ejercicio22",
