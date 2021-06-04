@@ -1,5 +1,7 @@
 package ejercicios;
 
+import java.util.Scanner;
+
 import recursos.AlturaAlumnos;
 
 /**
@@ -16,18 +18,61 @@ import recursos.AlturaAlumnos;
  */
 
 public class Ejercicio15 {
-    static void printAlturas (AlturaAlumnos alturaAlumnos){
+    static void printAlturas(AlturaAlumnos alturaAlumnos) {
         for (int i = 0; i < alturaAlumnos.getList().size(); i++) {
-            System.out.println("["+(i+1)+" -> "+alturaAlumnos.getList().get(i)+"]");
+            System.out.println("[" + (i + 1) + " -> " + alturaAlumnos.getList().get(i) + "]");
         }
     }
-    public static void main(String[] args) {
-        AlturaAlumnos alturaAlumnos = new AlturaAlumnos();
 
-        alturaAlumnos.addAltura(2.50f);
-        alturaAlumnos.addAltura(1.65f);
-        printAlturas(alturaAlumnos);
-        alturaAlumnos.orderList();
-        printAlturas(alturaAlumnos);
+    static void promptMenu() {
+        System.out.println(
+                "a: añadir altura\ns: mostrar lista\np: borrar la Posicion indicada\nt: borrar todas las ocurrencias de la alTura introducida"
+                        + "\no: ordenar la lista\ne: salir");
+    }
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        AlturaAlumnos alturaAlumnos = new AlturaAlumnos();
+        char opcion;
+        do {
+            promptMenu();
+            opcion = teclado.nextLine().charAt(0);
+            switch (opcion) {
+            case 'a':
+                System.out.println("Introduce la altura");
+                float añadir = Float.parseFloat(teclado.nextLine());
+                if (alturaAlumnos.addAltura(añadir))
+                    printAlturas(alturaAlumnos);
+                else
+                    System.out.println("Algo ha fallado");
+                break;
+            case 's':
+                printAlturas(alturaAlumnos);
+                break;
+            case 'p':
+                System.out.println("Introduce la posición");
+                int position = Integer.parseInt(teclado.nextLine());
+                if (alturaAlumnos.deleteAltura(position-1))
+                    printAlturas(alturaAlumnos);
+                else
+                    System.out.println("No se ha podido eliminar la altura");
+                break;
+            case 't':
+                System.out.println("Introduce el valor");
+                float valor = Float.parseFloat(teclado.nextLine());
+                System.out.println("Se han eliminado " + alturaAlumnos.deleteAltura(valor) + " alumnos");
+                break;
+            case 'o':
+                alturaAlumnos.orderList();
+                printAlturas(alturaAlumnos);
+                break;
+            case 'e':
+                System.out.println();
+                break;
+            default:
+                System.out.println("Algo ha fallado");
+            }
+        } while (opcion != 'e');
+        teclado.close();
     }
 }

@@ -6,6 +6,79 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
+=======
+            "name": "Launch Ejercicio29",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio29",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio25",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio25",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio24",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio24",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio23",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio23",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio22",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio22",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio21",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio21",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio20",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio20",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio19",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio19",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio18",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio18",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ejercicio17",
+            "request": "launch",
+            "mainClass": "ejercicios.Ejercicio17",
+            "projectName": "EjerciciosTema7"
+        },
+        {
+            "type": "java",
+>>>>>>> 1f7a1aefdb59d76ab751fded4e86613bb1af05f8
             "name": "Launch Ejercicio16",
             "request": "launch",
             "mainClass": "ejercicios.Ejercicio16",
